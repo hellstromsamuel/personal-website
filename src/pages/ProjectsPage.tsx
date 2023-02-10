@@ -8,7 +8,7 @@ const ProjectsPage = () => {
         Prosjekter
       </Typography>
       <div style={{ marginTop: "auto" }}>
-        <DownButton scrollDirection="ContactPage" />
+        <DownButton scrollDirection="FrontPage" />
       </div>
     </div>
   );
