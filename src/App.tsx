@@ -9,7 +9,6 @@ import DarkFadeFullScrenn from "./components/DarkFadeFullScreen";
 import FrontPage from "./pages/FrontPage";
 import EducationPage from "./pages/EducationPage";
 import ProjectsPage from "./pages/ProjectsPage";
-import ContactPage from "./pages/ContactPage";
 
 function App() {
   const [isDarkMode, setDarkMode] = useState<boolean>(false);
@@ -31,10 +30,6 @@ function App() {
 
         <div className="bg" id="ProjectsPage">
           <ProjectsPage />
-        </div>
-
-        <div className="bg" id="ContactPage">
-          <ContactPage />
         </div>
       </div>
     </ThemeProvider>

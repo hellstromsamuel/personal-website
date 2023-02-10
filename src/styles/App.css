@@ -70,13 +70,3 @@
 #ProjectsPage {
   background-image: url("./../img/coding.png");
 }
-
-#ContactPage {
-  background-image: url("./../img/profile_2.jpg");
-}
-
-@media screen and (min-width: 700px) {
-  #ContactPage {
-    background-image: url("./../img/profile_2_wide.jpg");
-  }
-}
