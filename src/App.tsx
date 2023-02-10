@@ -1,25 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./styles/App.css";
+import { theme } from "./theme";
+import { ThemeProvider } from "@mui/material/styles";
+
+import { useRef, useState } from "react";
+import "@fontsource/montserrat";
+import TopBar from "./components/TopBar";
+import DarkFadeFullScrenn from "./components/DarkFadeFullScreen";
+import FrontPage from "./pages/FrontPage";
+import EducationPage from "./pages/EducationPage";
+import ProjectsPage from "./pages/ProjectsPage";
+import ContactPage from "./pages/ContactPage";
 
 function App() {
+  const [isDarkMode, setDarkMode] = useState<boolean>(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div ref={containerRef} className="App">
+        <DarkFadeFullScrenn isDarkMode={isDarkMode} />
+        <TopBar isDarkMode={isDarkMode} setDarkMode={setDarkMode} />
+
+        <div className="bg" id="FrontPage">
+          <FrontPage />
+        </div>
+
+        <div className="bg" id="EducationPage">
+          <EducationPage />
+        </div>
+
+        <div className="bg" id="ProjectsPage">
+          <ProjectsPage />
+        </div>
+
+        <div className="bg" id="ContactPage">
+          <ContactPage />
+        </div>
+      </div>
+    </ThemeProvider>
   );
 }
 

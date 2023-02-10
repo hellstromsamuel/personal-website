@@ -1,0 +1,18 @@
+.Name {
+  color: white;
+  font-size: 3.5rem;
+  font-weight: 700;
+  font-family: "Montserrat";
+}
+
+@media screen and (min-width: 550px) {
+  .Name {
+    font-size: 5rem;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .Name {
+    font-size: 7rem;
+  }
+}
