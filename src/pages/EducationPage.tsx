@@ -13,7 +13,7 @@ const EducationPage = () => {
         style={{
           flexGrow: 1,
           width: "80%",
-          marginTop: "20px",
+          marginTop: "10px",
           display: "flex",
           flexDirection: "row",
           justifyContent: "center",
@@ -25,10 +25,7 @@ const EducationPage = () => {
           img={require("./../img/uio.jpg")}
           title="Master's degree, Informatikk: digital økonomi og ledelse"
           timespan="jul. 2022 - jun. 2024"
-          description="          Masterprogrammet tar for seg samspillet mellom avanserte tekniske
-          løsninger og forretningsmessig innovasjon. Dyp teknisk teknologisk
-          kunnskap og innsikt i hvordan digitalisering endrer
-          forretningsmodeller og organisasjoner."
+          description="Masterprogram i informatikk med forrettningsmessig spesialisering."
         />
       </div>
 
