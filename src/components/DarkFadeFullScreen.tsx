@@ -6,7 +6,7 @@ const DarkFadeFullScrenn = (props: { isDarkMode: boolean }) => {
         height: "100vh",
         width: "100vw",
         backgroundColor: "black",
-        opacity: props.isDarkMode ? "0.70" : "0.2",
+        opacity: props.isDarkMode ? "0.70" : "0.1",
         position: "fixed",
         transition: "0.6s",
       }}

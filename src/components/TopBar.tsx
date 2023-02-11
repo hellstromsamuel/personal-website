@@ -1,6 +1,8 @@
 import { Button, Link } from "@mui/material";
 import styled from "@emotion/styled";
 import DarkModeToggle from "react-dark-mode-toggle";
+import { useState } from "react";
+import ContactDialog from "./ContactDialog";
 
 interface TopBarProps {
   isDarkMode: boolean;
@@ -15,8 +17,8 @@ const TopBarButton = styled(Button)({
   marginRight: "10px",
   fontWeight: 700,
   borderRadius: "50px",
-  paddingLeft: "20px",
-  paddingRight: "20px",
+  paddingLeft: "15px",
+  paddingRight: "15px",
   transition: "0.4s",
   "&:hover": {
     background: "black",
@@ -25,6 +27,8 @@ const TopBarButton = styled(Button)({
 });
 
 const TopBar = (props: TopBarProps) => {
+  const [openContactDialog, setOpenContactDialog] = useState<boolean>(false);
+
   const themeToggler = () => {
     props.isDarkMode === false
       ? props.setDarkMode(true)
@@ -40,20 +44,25 @@ const TopBar = (props: TopBarProps) => {
       />
 
       <div style={{ marginLeft: "auto" }}>
+        {/* TODO: add link to CV pdf - LinkedIn */}
         <TopBarButton>
           <Link
             sx={{
-              textDecoration: "underline",
+              textDecoration: "none",
               color: "black",
               "&:hover": { color: "white" },
             }}
             href="https://www.linkedin.com/in/samuel-hellstrom/"
           >
-            CV
+            CV (PDF)
           </Link>
         </TopBarButton>
-        <TopBarButton>Kontakt</TopBarButton>
+        <TopBarButton onClick={() => setOpenContactDialog(true)}>
+          Kontakt
+        </TopBarButton>
       </div>
+
+      <ContactDialog open={openContactDialog} setOpen={setOpenContactDialog} />
     </div>
   );
 };
