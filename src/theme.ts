@@ -4,24 +4,21 @@ export const theme = createTheme({
   typography: {
     fontFamily: '"Montserrat", "Helvetica", "Arial", sans-serif',
     h1: {
-      color: "white",
-      fontSize: "3rem",
-      fontWeight: 700,
+      fontSize: "2.5rem",
+      fontWeight: 600,
     },
     h2: {
-      color: "black",
-      fontSize: "2.4rem",
-      fontWeight: 650,
+      fontSize: "2.1rem",
+      fontWeight: 500,
     },
     h3: {
-      color: "black",
-      fontSize: "1.8rem",
-      fontWeight: 500,
+      fontSize: "1.7rem",
+      fontWeight: 400,
     },
   },
   palette: {
     primary: {
-      main: "#000000",
+      main: "#ffffff",
     },
   },
 });
