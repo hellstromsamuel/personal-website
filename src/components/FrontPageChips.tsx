@@ -1,10 +1,6 @@
 import { Chip } from "@mui/material";
 
-interface Props {
-  textColor: string;
-}
-
-const FrontPageChips = (props: Props) => {
+const FrontPageChips = () => {
   return (
     <div
       style={{
@@ -17,25 +13,22 @@ const FrontPageChips = (props: Props) => {
       <Chip
         sx={{
           backgroundColor: "rgba(37, 150, 190, 0.4)",
-          color: props.textColor,
         }}
         label="Masterstudent DigØk"
       />
       <Chip
-        sx={{ backgroundColor: "rgba(225,26,34, 0.4)", color: props.textColor }}
+        sx={{ backgroundColor: "rgba(225,26,34, 0.4)" }}
         label="Plenumslærer (UiO)"
       />
       <Chip
         sx={{
           backgroundColor: "rgba(0, 183, 126, 0.4)",
-          color: props.textColor,
         }}
-        label="Utvikler / Gründer"
+        label="Utvikler"
       />
       <Chip
         sx={{
           backgroundColor: "rgba(89, 53, 140, 0.4)",
-          color: props.textColor,
         }}
         label="Toppidrettsutøver"
       />

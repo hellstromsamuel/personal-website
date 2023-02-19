@@ -1,21 +1,15 @@
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import FrontPageChips from "../components/FrontPageChips";
 import SocialMediaLinks from "../components/SocialMediaLinks";
 
-interface Props {
-  textColor: string;
-  backgroundColor: string;
-}
-
-const FrontPage = (props: Props) => {
+const FrontPage = () => {
   return (
-    <div
-      style={{
+    <Box
+      sx={{
         marginTop: "10vh",
         borderRadius: "20px",
         boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
-        backgroundColor:
-          props.backgroundColor === "#ffffff" ? "white" : "rgba(35,35,35)",
+        backgroundColor: "primary.light",
         transition: "1s",
       }}
     >
@@ -34,22 +28,20 @@ const FrontPage = (props: Props) => {
           display: "flex",
           flexDirection: "column",
           textAlign: "left",
-          rowGap: "5px",
+          rowGap: "10px",
           padding: "10px",
+          paddingBottom: "20px",
         }}
       >
-        <Typography variant="h2" sx={{ color: props.textColor }}>
+        <Typography variant="h2" color="text.primary">
           Samuel Hellstrøm
         </Typography>
 
-        <SocialMediaLinks
-          textColor={props.textColor}
-          backgroundColor={props.backgroundColor}
-        />
+        <SocialMediaLinks />
 
-        <FrontPageChips textColor={props.textColor} />
+        <FrontPageChips />
       </div>
-    </div>
+    </Box>
   );
 };
 

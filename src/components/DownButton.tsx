@@ -4,19 +4,15 @@ import { IconButton } from "@mui/material";
 const buttonStyle = {
   height: "50px",
   width: "50px",
-  padding: "5px",
-  color: "black",
-  backgroundColor: "white",
-  border: "2px solid black",
-  borderRadius: "50px",
+  color: "text.primary",
   transition: "0.4s",
-  "&:hover": {
-    background: "black",
-    color: "white",
-  },
 };
 
-const DownButton = (props: { scrollDirection: string }) => {
+interface Props {
+  scrollDirection: string;
+}
+
+const DownButton = (props: Props) => {
   return (
     <div className="DownButton">
       <IconButton

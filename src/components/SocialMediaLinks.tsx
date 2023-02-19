@@ -1,12 +1,7 @@
 import { IconButton, Link, Typography } from "@mui/material";
 import { Email, GitHub, LinkedIn } from "@mui/icons-material";
 
-interface Props {
-  textColor: string;
-  backgroundColor: string;
-}
-
-const SocialMediaLinks = (props: Props) => {
+const SocialMediaLinks = () => {
   return (
     <div
       style={{
@@ -29,10 +24,10 @@ const SocialMediaLinks = (props: Props) => {
           <Email sx={{ height: "30px", width: "30px" }} />
         </IconButton>
         <Typography
+          color="text.primary"
           sx={{
             fontSize: "12px",
             textDecoration: "underline",
-            color: props.textColor,
           }}
         >
           Email
@@ -51,10 +46,10 @@ const SocialMediaLinks = (props: Props) => {
           <LinkedIn sx={{ height: "30px", width: "30px", color: "#0072b1" }} />
         </IconButton>
         <Typography
+          color="text.primary"
           sx={{
             fontSize: "12px",
             textDecoration: "underline",
-            color: props.textColor,
           }}
         >
           LinkedIn
@@ -73,10 +68,10 @@ const SocialMediaLinks = (props: Props) => {
           <GitHub sx={{ height: "30px", width: "30px", color: "#171515" }} />
         </IconButton>
         <Typography
+          color="text.primary"
           sx={{
             fontSize: "12px",
             textDecoration: "underline",
-            color: props.textColor,
           }}
         >
           GitHub

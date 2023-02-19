@@ -1,6 +1,6 @@
-import { createTheme } from "@mui/material";
+import { createTheme } from "@mui/material/styles";
 
-export const theme = createTheme({
+const lightTheme = createTheme({
   typography: {
     fontFamily: '"Montserrat", "Helvetica", "Arial", sans-serif',
     h1: {
@@ -17,8 +17,12 @@ export const theme = createTheme({
     },
   },
   palette: {
+    mode: "light",
     primary: {
       main: "#ffffff",
+      light: "rgb(255,255,255)",
     },
   },
 });
+
+export default lightTheme;

@@ -1,29 +1,20 @@
 import "./styles/App.css";
-import { theme } from "./theme";
 import { ThemeProvider } from "@mui/material/styles";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "@fontsource/montserrat";
 import TopBar from "./components/TopBar";
 import FrontPage from "./pages/FrontPage";
 import EducationPage from "./pages/EducationPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import DownButton from "./components/DownButton";
+import darkTheme from "./theme/darkTheme";
+import lightTheme from "./theme/lightTheme";
 
 function App() {
   const [isDarkMode, setDarkMode] = useState<boolean>(false);
-  const [backgroundColor, setBackgroundColor] = useState<string>("#ffffff");
-  const [textColor, setTextColor] = useState<string>("#000000");
 
-  useEffect(() => {
-    if (isDarkMode) {
-      setBackgroundColor("#000000");
-      setTextColor("#ffffff");
-    } else {
-      setBackgroundColor("#ffffff");
-      setTextColor("#000000");
-    }
-  }, [isDarkMode]);
+  const theme = isDarkMode ? darkTheme : lightTheme;
 
   return (
     <ThemeProvider theme={theme}>
@@ -31,28 +22,25 @@ function App() {
         className="App"
         style={{
           transition: "1s",
-          backgroundColor: backgroundColor,
+          backgroundColor: theme.palette.background.default,
         }}
       >
-        <TopBar
-          isDarkMode={isDarkMode}
-          setDarkMode={setDarkMode}
-          textColor={textColor}
-          backgroundColor={backgroundColor}
-        />
+        <TopBar isDarkMode={isDarkMode} setDarkMode={setDarkMode} />
 
         <section id="FrontPage">
-          <FrontPage textColor={textColor} backgroundColor={backgroundColor} />
+          <FrontPage />
           <DownButton scrollDirection="EducationPage" />
         </section>
 
         <section id="EducationPage">
           <EducationPage />
+          <DownButton scrollDirection="ProjectsPage" />
         </section>
 
-        <div className="bg" id="ProjectsPage">
+        <section id="ProjectsPage">
           <ProjectsPage />
-        </div>
+          <DownButton scrollDirection="FrontPage" />
+        </section>
       </div>
     </ThemeProvider>
   );

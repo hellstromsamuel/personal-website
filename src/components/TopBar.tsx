@@ -1,11 +1,9 @@
-import { Button, Link } from "@mui/material";
+// import { Button, Link } from "@mui/material";
 import DarkModeToggle from "react-dark-mode-toggle";
 
 interface TopBarProps {
   isDarkMode: boolean;
   setDarkMode: (mode: boolean) => void;
-  textColor: string;
-  backgroundColor: string;
 }
 
 const TopBar = (props: TopBarProps) => {
@@ -23,22 +21,23 @@ const TopBar = (props: TopBarProps) => {
         size={80}
       />
 
-      <div style={{ marginLeft: "auto" }}>
-        {/* TODO: add link to CV pdf (not LinkedIn) */}
+      {/* TODO: */}
+      {/* <div style={{ marginLeft: "auto" }}>
         <Button
           sx={{
-            border: "2px solid " + props.textColor,
+            border: `1px solid ${theme.palette.text.primary}`,
+            backgroundColor: "background.default",
             fontWeight: 700,
             borderRadius: "50px",
             paddingLeft: "15px",
             paddingRight: "15px",
             transition: "0.4s",
-            backgroundColor: props.backgroundColor,
+            boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
           }}
         >
           <Link
             sx={{
-              color: props.textColor,
+              color: "text.primary",
               textDecoration: "none",
             }}
             href="https://www.linkedin.com/in/samuel-hellstrom/"
@@ -46,7 +45,7 @@ const TopBar = (props: TopBarProps) => {
             CV (PDF)
           </Link>
         </Button>
-      </div>
+      </div> */}
     </div>
   );
 };

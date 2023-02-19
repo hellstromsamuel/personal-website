@@ -1,11 +1,10 @@
 import { Typography } from "@mui/material";
-import DownButton from "../components/DownButton";
 import EducationCard from "../components/EducationCard";
 
 const EducationPage = () => {
   return (
     <div className="PageContent">
-      <Typography variant="h1" sx={{ marginTop: "12vh" }}>
+      <Typography variant="h1" color="text.primary" sx={{ marginTop: "10vh" }}>
         Utdanning
       </Typography>
 
@@ -27,10 +26,6 @@ const EducationPage = () => {
           timespan="jul. 2022 - jun. 2024"
           description="Masterprogram i informatikk med forrettningsmessig spesialisering."
         />
-      </div>
-
-      <div style={{ marginTop: "auto" }}>
-        <DownButton scrollDirection="ProjectsPage" />
       </div>
     </div>
   );
