@@ -1,7 +1,7 @@
 import "./styles/App.css";
 import { ThemeProvider } from "@mui/material/styles";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "@fontsource/montserrat";
 import TopBar from "./components/TopBar";
 import FrontPage from "./pages/FrontPage";
@@ -13,8 +13,21 @@ import lightTheme from "./theme/lightTheme";
 
 function App() {
   const [isDarkMode, setDarkMode] = useState<boolean>(false);
-
   const theme = isDarkMode ? darkTheme : lightTheme;
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        } else {
+          entry.target.classList.remove("show");
+        }
+      });
+    });
+    const hiddenElements = document.querySelectorAll(".hidden");
+    hiddenElements.forEach((el) => observer.observe(el));
+  }, []);
 
   return (
     <ThemeProvider theme={theme}>
@@ -27,17 +40,17 @@ function App() {
       >
         <TopBar isDarkMode={isDarkMode} setDarkMode={setDarkMode} />
 
-        <section id="FrontPage">
+        <section id="FrontPage" className="hidden">
           <FrontPage />
           <DownButton scrollDirection="EducationPage" />
         </section>
 
-        <section id="EducationPage">
+        <section id="EducationPage" className="hidden">
           <EducationPage />
           <DownButton scrollDirection="ProjectsPage" />
         </section>
 
-        <section id="ProjectsPage">
+        <section id="ProjectsPage" className="hidden">
           <ProjectsPage />
           <DownButton scrollDirection="FrontPage" />
         </section>

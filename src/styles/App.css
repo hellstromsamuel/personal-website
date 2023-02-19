@@ -17,9 +17,27 @@ section {
   width: calc(100% - 32px);
   max-width: 650px;
   min-height: 100vh;
-  max-height: 100vh;
   padding: 16px;
 }
+
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+/* fade once */
+/* @media (prefers-reduced-motion) {
+  .hidden {
+    transition: none;
+  }
+} */
 
 .DownButton {
   z-index: 2;
