@@ -11,7 +11,6 @@ const EducationPage = () => {
       <div
         style={{
           flexGrow: 1,
-          width: "80%",
           marginTop: "10px",
           display: "flex",
           flexDirection: "row",

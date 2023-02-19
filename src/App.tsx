@@ -22,7 +22,7 @@ function App() {
         className="App"
         style={{
           transition: "1s",
-          backgroundColor: theme.palette.background.default,
+          backgroundColor: theme.palette.primary.light,
         }}
       >
         <TopBar isDarkMode={isDarkMode} setDarkMode={setDarkMode} />

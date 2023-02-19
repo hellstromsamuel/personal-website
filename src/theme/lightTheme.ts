@@ -20,7 +20,7 @@ const lightTheme = createTheme({
     mode: "light",
     primary: {
       main: "#ffffff",
-      light: "rgb(255,255,255)",
+      light: "rgb(245,245,245)",
     },
   },
 });

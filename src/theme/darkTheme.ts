@@ -20,7 +20,7 @@ const darkTheme = createTheme({
     mode: "dark",
     primary: {
       main: "rgb(0,0,0)",
-      light: "rgb(40,40,40)",
+      light: "rgb(30,30,30)",
     },
   },
 });

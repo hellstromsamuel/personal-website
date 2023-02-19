@@ -23,6 +23,7 @@ const EducationCard = (props: EducationCardProps) => {
         boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
         borderRadius: "20px",
         padding: "10px",
+        backgroundColor: "primary.main",
       }}
     >
       <CardMedia

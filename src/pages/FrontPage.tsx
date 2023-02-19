@@ -9,7 +9,7 @@ const FrontPage = () => {
         marginTop: "10vh",
         borderRadius: "20px",
         boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
-        backgroundColor: "primary.light",
+        backgroundColor: "primary.main",
         transition: "1s",
       }}
     >
