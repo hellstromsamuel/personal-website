@@ -1,49 +1,32 @@
-import {
-  Card,
-  CardContent,
-  CardMedia,
-  Divider,
-  Typography,
-} from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 interface EducationCardProps {
-  img: any;
+  place: string;
   title: string;
   timespan: string;
-  description: string;
 }
 
 const EducationCard = (props: EducationCardProps) => {
   return (
-    <Card
+    <Box
+      className="element hidden"
       sx={{
-        width: "100%",
-        maxWidth: "600px",
-        textAlign: "left",
-        boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
-        borderRadius: "20px",
-        padding: "10px",
         backgroundColor: "primary.main",
+        textAlign: "left",
+        boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
+        borderRadius: "20px",
+        padding: "10px 16px 10px 16px",
       }}
     >
-      <CardMedia
-        component="img"
-        height="140"
-        image={props.img}
-        alt="UiO logo"
-      />
-      <Divider />
-      <CardContent>
-        <Typography fontWeight={700}>Universitetet i Oslo (UiO)</Typography>
-        <Typography>{props.title}</Typography>
-        <Typography variant="body2" color="text.secondary">
-          {props.timespan}
-        </Typography>
-        <Typography variant="body2" sx={{ mt: 1 }}>
-          {props.description}
-        </Typography>
-      </CardContent>
-    </Card>
+      <Typography fontWeight={700} color="text.primary">
+        {props.place}
+      </Typography>
+
+      <Typography color="text.secondary" sx={{ marginLeft: "auto" }}>
+        {props.timespan}
+      </Typography>
+      <Typography color="text.primary">{props.title}</Typography>
+    </Box>
   );
 };
 

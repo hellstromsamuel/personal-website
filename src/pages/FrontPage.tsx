@@ -5,12 +5,11 @@ import SocialMediaLinks from "../components/SocialMediaLinks";
 const FrontPage = () => {
   return (
     <Box
+      className="hidden"
       sx={{
-        marginTop: "10vh",
         borderRadius: "20px",
-        boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
+        boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
         backgroundColor: "primary.main",
-        transition: "1s",
       }}
     >
       <img

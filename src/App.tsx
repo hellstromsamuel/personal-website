@@ -27,7 +27,7 @@ function App() {
     });
     const hiddenElements = document.querySelectorAll(".hidden");
     hiddenElements.forEach((el) => observer.observe(el));
-  }, []);
+  }, [isDarkMode]);
 
   return (
     <ThemeProvider theme={theme}>
@@ -39,18 +39,17 @@ function App() {
         }}
       >
         <TopBar isDarkMode={isDarkMode} setDarkMode={setDarkMode} />
-
-        <section id="FrontPage" className="hidden">
+        <section id="FrontPage">
           <FrontPage />
           <DownButton scrollDirection="EducationPage" />
         </section>
 
-        <section id="EducationPage" className="hidden">
+        <section id="EducationPage">
           <EducationPage />
           <DownButton scrollDirection="ProjectsPage" />
         </section>
 
-        <section id="ProjectsPage" className="hidden">
+        <section id="ProjectsPage">
           <ProjectsPage />
           <DownButton scrollDirection="FrontPage" />
         </section>

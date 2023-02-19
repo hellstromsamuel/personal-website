@@ -1,0 +1,27 @@
+.DownButton {
+  z-index: 2;
+  margin-top: 2vh;
+  height: 15vh;
+  padding-top: 0vh;
+  animation-duration: 1s;
+  animation-name: button;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes button {
+  from {
+    padding-top: 0vh;
+    height: 15vh;
+  }
+
+  10% {
+    padding-top: 0vh;
+    height: 15vh;
+  }
+
+  to {
+    padding-top: 2vh;
+    height: 13vh;
+  }
+}

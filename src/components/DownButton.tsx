@@ -1,3 +1,4 @@
+import "../styles/DownButton.css";
 import { ArrowDownward, ArrowUpward } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
 
@@ -5,7 +6,6 @@ const buttonStyle = {
   height: "50px",
   width: "50px",
   color: "text.primary",
-  transition: "0.4s",
 };
 
 interface Props {
@@ -14,7 +14,7 @@ interface Props {
 
 const DownButton = (props: Props) => {
   return (
-    <div className="DownButton">
+    <div className="DownButton hidden">
       <IconButton
         onClick={() => {
           document.getElementById(props.scrollDirection)?.scrollIntoView();

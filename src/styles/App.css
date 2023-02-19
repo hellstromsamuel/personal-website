@@ -1,28 +1,25 @@
 .App {
+  padding: 16px;
   text-align: center;
 }
 
 .TopBar {
-  padding: 16px;
-  width: calc(100vw - 32px);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  width: calc(100% - 32px);
+  text-align: right;
   position: fixed;
   z-index: 100;
 }
 
 section {
   margin: auto;
-  width: calc(100% - 32px);
-  max-width: 650px;
-  min-height: 100vh;
-  padding: 16px;
+  max-width: 750px;
+  padding-top: 8vh;
+  height: 92vh;
 }
 
 .hidden {
   opacity: 0;
-  filter: blur(5px);
+  filter: blur(10px);
   transform: translateX(-100%);
   transition: all 1s;
 }
@@ -32,38 +29,47 @@ section {
   transform: translateX(0);
 }
 
-/* fade once */
-/* @media (prefers-reduced-motion) {
-  .hidden {
-    transition: none;
-  }
-} */
-
-.DownButton {
-  z-index: 2;
-  margin-bottom: 8vh;
-  margin-top: 2vh;
-  height: 15vh;
-  padding-top: 0vh;
-  animation-duration: 1s;
-  animation-name: button;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+.elements {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 10px;
+  row-gap: 10px;
+}
+.element:nth-child(1) {
+  transition-delay: 0ms;
+}
+.element:nth-child(2) {
+  transition-delay: 200ms;
+}
+.element:nth-child(3) {
+  transition-delay: 0ms;
+}
+.element:nth-child(4) {
+  transition-delay: 200ms;
 }
 
-@keyframes button {
-  from {
-    padding-top: 0vh;
-    height: 15vh;
+@media screen and (max-width: 550px) {
+  .elements {
+    grid-template-columns: 100%;
   }
-
-  10% {
-    padding-top: 0vh;
-    height: 15vh;
+  .element:nth-child(1) {
+    transition-delay: 0ms;
   }
+  .element:nth-child(2) {
+    transition-delay: 50ms;
+  }
+  .element:nth-child(3) {
+    transition-delay: 100ms;
+  }
+  .element:nth-child(4) {
+    transition-delay: 200ms;
+  }
+}
 
-  to {
-    padding-top: 2vh;
-    height: 13vh;
+/* fade once : TODO: NOT WORKING? */
+@media (prefers-reduced-motion) {
+  .hidden {
+    transition: none;
   }
 }

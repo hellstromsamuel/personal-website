@@ -2,8 +2,8 @@ import { Typography } from "@mui/material";
 
 const ProjectsPage = () => {
   return (
-    <div className="PageContent">
-      <Typography variant="h1" color="text.primary" sx={{ marginTop: "12vh" }}>
+    <div>
+      <Typography variant="h1" color="text.primary" className="hidden">
         Prosjekter
       </Typography>
     </div>
